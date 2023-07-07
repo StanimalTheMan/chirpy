@@ -11,6 +11,7 @@ func main() {
 
 	mux := http.NewServeMux()
 	mux.Handle("/", http.FileServer(http.Dir(filepathRoot)))
+	// mux.Handle("/assets/logo.png", http.FileServer(http.Dir(filepathRoot)))
 	corsMux := middlewareCors(mux)
 
 	server := &http.Server{
